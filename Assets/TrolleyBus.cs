@@ -14,7 +14,8 @@ public class TrolleyBus : MonoBehaviour
     private bool isActive = false;
     private NodeStation nextStation;
     private int nodeIndex;
-    private float currentSpeed;
+    private bool stopped;
+    private float pickedUpTimer; // maximum should be 5, pickedUpTimer += 0.1 * dt
 
     void MoveTrolley()
     {
@@ -26,25 +27,29 @@ public class TrolleyBus : MonoBehaviour
         // transform.position = Vector3.Lerp(transform.position, targetPosition, smoothT);
 
         Vector3 pos = nextStation.transform.position;
-        gameObject.transform.position = Vector3.MoveTowards(
-            gameObject.transform.position,
-            pos,
-            maxSpeed * Time.deltaTime
-        );
 
-        Vector3 direction = (pos - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        angle -= 90;
-        transform.rotation = Quaternion.Slerp(
-            transform.rotation,
-            Quaternion.AngleAxis(angle, Vector3.forward),
-            Time.deltaTime * 999
-        );
-
-        if ((pos - gameObject.transform.position).magnitude <= .01f)
+        if (!stopped)
         {
-            // todo: add logic to get passengers from the station and put them on the trolley
+            gameObject.transform.position = Vector3.MoveTowards(
+                gameObject.transform.position,
+                pos,
+                maxSpeed * Time.deltaTime
+            );
 
+            Vector3 direction = (pos - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            angle -= 90;
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                Quaternion.AngleAxis(angle, Vector3.forward),
+                Time.deltaTime * 999
+            );
+        }
+
+        if (Vector3.Distance(gameObject.transform.position, pos) <= .01f && !stopped)
+        {
+            stopped = true;
+            pickedUpTimer = 5f;
             if (nodeIndex >= routeStations.stations.Count - 1)
             {
                 nodeIndex = 0;
@@ -55,6 +60,15 @@ public class TrolleyBus : MonoBehaviour
             }
             nextStation = routeStations.stations[nodeIndex];
         }
+        if (pickedUpTimer <= 0f)
+        {
+            stopped = false;
+        }
+        else
+        {
+            pickedUpTimer -= Time.deltaTime;
+        }
+        Debug.Log($"{pickedUpTimer}; {stopped};");
     }
 
     void Update()

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrolleyManager : MonoBehaviour
 {
+    [TextArea]
     public string notice1 = "this object only exists so that trolleys would get assigned as a child of this and thus get the drawing priority";
+    [TextArea]
     public string notice2 = "maybe it will get used sometime but not right now \\_/(ツ)\\_/";
 }

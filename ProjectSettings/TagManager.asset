@@ -6,6 +6,10 @@ TagManager:
   tags:
   - NodeManager
   - Node
+  - TrolleyManager
+  - id
+  - pasnum
+  - nstop
   layers:
   - Default
   - TransparentFX
