@@ -15,10 +15,20 @@ public class NodeStation : Node
 {
     public string stationName;
     public int passengers;
+    public int maxPassengers;
     public List<nextRouteStop> nextStation;
+    private int previousPassengers;
 
     void Start()
     {
         gameObject.GetComponentInChildren<TMP_Text>().text = stationName;
+    }
+
+    void Update()
+    {
+        if (passengers - previousPassengers != 0)
+        {
+            passengers = UnityEngine.Random.Range(0, maxPassengers);
+        }
     }
 }

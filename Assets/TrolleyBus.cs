@@ -49,6 +49,10 @@ public class TrolleyBus : MonoBehaviour
         if (Vector3.Distance(gameObject.transform.position, pos) <= .01f && !stopped)
         {
             stopped = true;
+
+            passengers += nextStation.passengers;
+            passengers -= UnityEngine.Random.Range(0, passengers/2);
+
             pickedUpTimer = 5f;
             if (nodeIndex >= routeStations.stations.Count - 1)
             {
