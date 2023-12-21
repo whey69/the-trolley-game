@@ -10,9 +10,10 @@ public class TrolleyBus : MonoBehaviour
     public int passengers;
     public float maxSpeed;
     public float acceleration;
+    public int id;
+    public NodeStation nextStation;
 
     private bool isActive = false;
-    private NodeStation nextStation;
     private int nodeIndex;
     private bool stopped;
     private float pickedUpTimer; // maximum should be 5, pickedUpTimer += 0.1 * dt
@@ -39,7 +40,7 @@ public class TrolleyBus : MonoBehaviour
             Vector3 direction = (pos - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             angle -= 90;
-            transform.rotation = Quaternion.Slerp(
+            gameObject.GetComponentInChildren<SpriteRenderer>().transform.rotation = Quaternion.Slerp(
                 transform.rotation,
                 Quaternion.AngleAxis(angle, Vector3.forward),
                 Time.deltaTime * 999
@@ -64,6 +65,7 @@ public class TrolleyBus : MonoBehaviour
             }
             nextStation = routeStations.stations[nodeIndex];
         }
+
         if (pickedUpTimer <= 0f)
         {
             stopped = false;
@@ -72,7 +74,7 @@ public class TrolleyBus : MonoBehaviour
         {
             pickedUpTimer -= Time.deltaTime;
         }
-        Debug.Log($"{pickedUpTimer}; {stopped};");
+        // Debug.Log($"{pickedUpTimer}; {stopped};");
     }
 
     void Update()

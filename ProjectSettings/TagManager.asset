@@ -10,6 +10,7 @@ TagManager:
   - id
   - pasnum
   - nstop
+  - canvas
   layers:
   - Default
   - TransparentFX

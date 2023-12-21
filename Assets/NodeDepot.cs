@@ -23,7 +23,9 @@ public class NodeDepot : Node
     {
         // TrolleyBus trolley = new TrolleyBus(routes[0], routes[0].firstStationIndex); // "routes[0]" temp, add another system later pls ok thx bye
         GameObject trolley = Instantiate(trolleyprefab, gameObject.transform.position, quaternion.identity);
+        trolley.transform.SetParent(GameObject.FindWithTag("TrolleyManager").transform);
         trolley.GetComponent<TrolleyBus>().startTrolley(routes[0], routes[0].firstStationIndex);
+        trolley.GetComponent<TrolleyBus>().id = UnityEngine.Random.Range(1, 100);
         trolleyBusesInStore -= 1;
     }
 
