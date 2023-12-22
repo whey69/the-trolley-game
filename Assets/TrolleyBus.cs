@@ -85,11 +85,12 @@ public class TrolleyBus : MonoBehaviour
         }
     }
 
-    public void startTrolley(Route route, int firstStationIndex)
+    public void startTrolley(Route route, int firstStationIndex, int id)
     {
         routeStations = route;
         nextStation = routeStations.stations[firstStationIndex];
         nodeIndex = firstStationIndex;
         isActive = true;
+        this.id = id;
     }
 }

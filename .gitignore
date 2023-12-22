@@ -72,7 +72,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 ### VisualStudioCode ###
-*/.vscode
+.vscode
 .vscode/*
 !.vscode/*
 !.vscode/settings.json

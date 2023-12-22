@@ -517,14 +517,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8620983109150033604, guid: 5e0581e89597f854496af01810a286c8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8624124158295230254, guid: 5e0581e89597f854496af01810a286c8, type: 3}
       propertyPath: depotNumber
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8624124158295230254, guid: 5e0581e89597f854496af01810a286c8, type: 3}
-      propertyPath: trolleyprefab
-      value: 
-      objectReference: {fileID: 2690660524504235691, guid: 9f9ea45d454a003488aca82ff10f6838, type: 3}
     - target: {fileID: 8624124158295230254, guid: 5e0581e89597f854496af01810a286c8, type: 3}
       propertyPath: routes.Array.size
       value: 1
@@ -541,6 +541,10 @@ PrefabInstance:
       propertyPath: connectedNodes.Array.data[0]
       value: 
       objectReference: {fileID: 131107531}
+    - target: {fileID: 8624124158295230254, guid: 5e0581e89597f854496af01810a286c8, type: 3}
+      propertyPath: routes.Array.data[0].routeNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8624124158295230254, guid: 5e0581e89597f854496af01810a286c8, type: 3}
       propertyPath: routes.Array.data[0].firstStationIndex
       value: 3

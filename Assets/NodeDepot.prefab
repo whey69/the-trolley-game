@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6195843094172430873}
   - component: {fileID: 8624124158295230254}
   - component: {fileID: -5552468959550022143}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NodeDepot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,8 @@ MonoBehaviour:
   connectedNodes: []
   trolleyBusesInStore: 0
   depotNumber: 0
-  trolleyprefab: {fileID: 0}
+  routes: []
+  trolleyprefab: {fileID: 2690660524504235691, guid: 9f9ea45d454a003488aca82ff10f6838, type: 3}
 --- !u!212 &-5552468959550022143
 SpriteRenderer:
   m_ObjectHideFlags: 0
