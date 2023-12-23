@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6195843094172430873}
   - component: {fileID: 2168587485911427651}
   - component: {fileID: -5552468959550022143}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: NodeStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +50,7 @@ MonoBehaviour:
   stationName: 
   passengers: 0
   maxPassengers: 0
+  populatiry: 0
   nextStation: []
 --- !u!212 &-5552468959550022143
 SpriteRenderer:
@@ -114,7 +115,7 @@ GameObject:
   - component: {fileID: 8063330720010988379}
   - component: {fileID: 6982576583916864342}
   - component: {fileID: 4560793272827109584}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

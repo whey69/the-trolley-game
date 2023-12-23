@@ -16,9 +16,7 @@ public class TrolleyBusUiHandler :  MonoBehaviour
 
     void Update()
     {
-        id.text = $"Trolleybus #{trolley.id}";
-        passes.text = trolley.passengers.ToString();
-        nextstop.text = trolley.nextStation.stationName;
+        
     }
 
     void OnMouseOver()

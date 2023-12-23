@@ -9,6 +9,7 @@ public class Route
 {
     public int routeNumber;
     public List<NodeStation> stations;
+    public bool isLoop;
 
     [HideInInspector]
     public List<TrolleyBus> trolleyBusesOnLine;
@@ -26,6 +27,8 @@ public class NodeDepot : Node
     [SerializeField]
     GameObject trolleyprefab;
 
+    private int trolleysSent;
+
     void SendTrolleybus()
     {
         GameObject trolley = Instantiate(
@@ -34,14 +37,15 @@ public class NodeDepot : Node
             quaternion.identity
         );
         trolley.transform.SetParent(GameObject.FindWithTag("TrolleyManager").transform);
+        Debug.Log(trolleysSent % routes.Count);
         trolley
             .GetComponent<TrolleyBus>()
             .startTrolley(
-                routes[0],
-                routes[0].firstStationIndex,
-                (routes[0].routeNumber * 100) + UnityEngine.Random.Range(1, 99)
+                routes[trolleysSent % routes.Count],
+                (routes[trolleysSent % routes.Count].routeNumber * 100) + UnityEngine.Random.Range(1, 99)
             );
-        trolleyBusesInStore -= 1;
+        trolleyBusesInStore--;
+        trolleysSent++;
     }
 
     void Update()

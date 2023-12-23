@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1354573229047251037}
   - component: {fileID: 4933213479372394827}
   - component: {fileID: 6799741145026229365}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 5466665889668879651}
   - component: {fileID: 1776693714399080663}
   - component: {fileID: 4138003645220303399}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 2853305826989900155}
   - component: {fileID: 599484954933017182}
   - component: {fileID: 780760131685211083}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,13 +361,13 @@ GameObject:
   - component: {fileID: 544931175669542503}
   - component: {fileID: 1926615699524461345}
   - component: {fileID: 2039880365350337306}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3227633681346589887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -460,9 +460,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2690660524504235688}
   - component: {fileID: 2690660524504235689}
-  - component: {fileID: 4405510063850257752}
   - component: {fileID: 5562814583891292196}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: TrolleyBus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,6 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   route: 0
   routeStations:
+    routeNumber: 0
     stations: []
     trolleyBusesOnLine: []
     firstStationIndex: 0
@@ -508,20 +508,8 @@ MonoBehaviour:
   acceleration: 0
   id: 0
   nextStation: {fileID: 0}
---- !u!114 &4405510063850257752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2690660524504235691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f6d2ddebd996704b892408a18916291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   ui: {fileID: 2288741905202328425}
-  id: {fileID: 1034555284475888792}
+  idText: {fileID: 1034555284475888792}
   passes: {fileID: 1344426724274491582}
   nextstop: {fileID: 7068013703359507419}
 --- !u!61 &5562814583891292196
@@ -561,7 +549,7 @@ GameObject:
   - component: {fileID: 3331265256816966870}
   - component: {fileID: 4583494003757619289}
   - component: {fileID: 7068013703359507419}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: nextstop
   m_TagString: nstop
   m_Icon: {fileID: 0}
@@ -696,7 +684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6591414362830720460}
   - component: {fileID: 8045912921066369618}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +769,7 @@ GameObject:
   - component: {fileID: 377336642281338454}
   - component: {fileID: 9175825382878218944}
   - component: {fileID: 1344426724274491582}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: passes
   m_TagString: pasnum
   m_Icon: {fileID: 0}
@@ -917,7 +905,7 @@ GameObject:
   - component: {fileID: 4410002946982153666}
   - component: {fileID: 1374962443228050469}
   - component: {fileID: 1034555284475888792}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: id
   m_TagString: Untagged
   m_Icon: {fileID: 0}

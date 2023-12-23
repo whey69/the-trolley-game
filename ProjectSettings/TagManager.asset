@@ -15,11 +15,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - nodes
+  - connector
   - Water
   - UI
-  - trolleybus
-  - 
+  - nodes
+  - trolley
   - 
   - 
   - 
